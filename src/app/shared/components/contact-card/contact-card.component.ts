@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CallNumber } from '@ionic-native/call-number/ngx';
 import { Contact } from '../../models/contact';
 
 @Component({
@@ -15,7 +16,9 @@ export class ContactCardComponent implements OnInit {
 
   hideAditionalData = false;
 
-  constructor() { }
+  constructor(
+    private callNumber: CallNumber
+  ) { }
 
   ngOnInit() {
     this.name = this.contact.name;
@@ -24,5 +27,10 @@ export class ContactCardComponent implements OnInit {
 
   showMoreData(): void {
     this.hideAditionalData = !this.hideAditionalData;
+  }
+
+  call() {
+    this.callNumber.callNumber(this.number, true)
+      .catch(() => console.log('Falha ao ligar pro número'));
   }
 }
