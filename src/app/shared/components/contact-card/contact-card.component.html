@@ -1,0 +1,30 @@
+<ion-card>
+  <ion-item lines="none">
+    <ion-thumbnail slot="start">
+      <img [src]="avatar"/>
+    </ion-thumbnail>
+    <ion-row>
+      <ion-col size="12">
+        <ion-text>
+          {{ name }}
+        </ion-text>
+      </ion-col>
+      <ion-col size="12">
+        <ion-row>
+          <ion-text>
+            {{ number }}
+          </ion-text>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-buttons slot="end">
+      <ion-button slot="icon-only">
+        <ion-icon name="call-sharp"></ion-icon>
+      </ion-button>
+      <ion-button slot="icon-only" (click)="showMoreData()">
+        <ion-icon name="chevron-down-sharp"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+  <app-contact-data *ngIf="hideAditionalData" [contact]="contact"></app-contact-data>
+</ion-card>
