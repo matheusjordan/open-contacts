@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContactCardComponent } from './components/contact-card/contact-card.component';
 import { ContactDataComponent } from './components/contact-data/contact-data.component';
+import { IonicModule } from '@ionic/angular';
 
 
 
@@ -15,7 +16,8 @@ import { ContactDataComponent } from './components/contact-data/contact-data.com
     ContactDataComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    IonicModule
   ]
 })
 export class SharedModule { }
