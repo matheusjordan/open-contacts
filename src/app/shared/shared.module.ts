@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ContactCardComponent } from './components/contact-card/contact-card.component';
-import { ContactDataComponent } from './components/contact-data/contact-data.component';
 import { IonicModule } from '@ionic/angular';
 import { CallNumber } from '@ionic-native/call-number/ngx';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+import { ContactDataComponent } from './components/contact-data/contact-data.component';
+import { ContactCardComponent } from './components/contact-card/contact-card.component';
 
 
 
@@ -21,7 +22,8 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
     IonicModule
   ],
   providers: [
-    CallNumber
+    CallNumber,
+    SocialSharing
   ]
 })
 export class SharedModule { }
