@@ -3,7 +3,7 @@
     <ion-thumbnail slot="start">
       <img [src]="avatar"/>
     </ion-thumbnail>
-    <ion-row>
+    <ion-row *ngIf="!enableEdit">
       <ion-col size="12">
         <ion-text>
           {{ name }}
@@ -17,6 +17,10 @@
         </ion-row>
       </ion-col>
     </ion-row>
+    <div *ngIf="enableEdit">
+      <ion-input [ngModel]="name"></ion-input>
+      <ion-input [ngModel]="number" inputmode="tel"></ion-input>
+    </div>
     <ion-buttons slot="end">
       <ion-button slot="icon-only" (click)="call()">
         <ion-icon name="call-sharp"></ion-icon>
@@ -26,5 +30,12 @@
       </ion-button>
     </ion-buttons>
   </ion-item>
-  <app-contact-data *ngIf="hideAditionalData" [contact]="contact"></app-contact-data>
+  <app-contact-data *ngIf="hideAditionalData" [contact]="contact">
+    <ion-button color="success" (click)="treatEdit()" *ngIf="!enableEdit">
+      Editar
+    </ion-button>
+    <ion-button color="primary" (click)="treatEdit()" *ngIf="enableEdit">
+      Salvar
+    </ion-button>
+  </app-contact-data>
 </ion-card>

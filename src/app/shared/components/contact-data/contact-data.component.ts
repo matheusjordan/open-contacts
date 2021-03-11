@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { Contact } from '../../models/contact';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 

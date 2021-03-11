@@ -1,3 +1,14 @@
 ion-buttons {
     margin-left: 4px;
 }
+
+ion-input {
+    border: 1px solid navajowhite;
+    border-radius: 8px;
+}
+
+::ng-deep ion-input {
+    input {
+        padding: 4px !important;
+    }
+}

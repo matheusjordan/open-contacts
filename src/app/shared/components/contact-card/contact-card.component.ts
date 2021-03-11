@@ -15,6 +15,7 @@ export class ContactCardComponent implements OnInit {
   number: string;
 
   hideAditionalData = false;
+  enableEdit = false;
 
   constructor(
     private callNumber: CallNumber
@@ -29,8 +30,16 @@ export class ContactCardComponent implements OnInit {
     this.hideAditionalData = !this.hideAditionalData;
   }
 
-  call() {
+  call(): void {
     this.callNumber.callNumber(this.number, true)
       .catch(() => console.log('Falha ao ligar pro número'));
+  }
+
+  treatEdit(isSave = false): void {
+    this.enableEdit = !this.enableEdit;
+
+    if (isSave) {
+      // @todo 
+    }
   }
 }
