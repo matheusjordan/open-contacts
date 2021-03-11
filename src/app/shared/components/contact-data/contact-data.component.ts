@@ -20,7 +20,13 @@ export class ContactDataComponent implements OnInit {
     const message = `${this.contact.name}\n${this.contact.number}`;
 
     this.socialSharing.share(message, 'Compartilhe contato utilizando')
-      .catch(() => { console.log('Falha ao compartilhar anúncio') });
+      .catch(() => { console.log('Falha ao compartilhar contato') });
+  }
+
+  shareWhatsapp() {
+    const helloMessage = 'Olá!';
+    this.socialSharing.shareViaWhatsAppToPhone(this.contact.number, helloMessage, null)
+      .catch(() => { console.log('Falha ao compartilhar contato via Whatsapp')});
   }
 
 }
